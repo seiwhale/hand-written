@@ -1,7 +1,7 @@
 // 三种实现斐波那契数列的方式
-// 优缺点详见 README.nd
-// 递归实现
+// 优缺点详见 README.md
 
+// 递归实现
 function fibonacci_1(n, first = 1, second = 1) {
     if (n <= 1) { return first }
     if (n === 2) { return second }
