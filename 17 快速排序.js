@@ -5,7 +5,7 @@
  *  3. 对"基准"左边和右边的两个子集，不断重复第一步和第二步，直到所有子集只剩下一个元素为止
  **/
 
-function quickSort(arr) 
+function quickSort(arr) {
     if (arr.length <= 1) return arr;
     // 获取基准点
     var pivotIndex = Math.floor(arr.length / 2);
