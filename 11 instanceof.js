@@ -1,13 +1,13 @@
 function instanceOf(left, right) {
-	const proto = Object.getPrototypeOf(left), prototype = right.prototype;
-    if (proto === null || proto === undefined) {
-        return false;
-    } else if (proto === prototype) {
-        return true
-    } else {
-        return instanceOf(Object.getPrototypeOf(proto), right);
-    }
-
+  const proto = Object.getPrototypeOf(left),
+    prototype = right.prototype;
+  if (proto === null || proto === undefined) {
+    return false;
+  } else if (proto === prototype) {
+    return true;
+  } else {
+    return instanceOf(Object.getPrototypeOf(proto), right);
+  }
 }
 
 var a = {};

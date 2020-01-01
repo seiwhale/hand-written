@@ -1,5 +1,5 @@
 // call
-Function.prototype.myCall = function (content = window) {
+Function.prototype.myCall = function(content = window) {
   // 将函数设为对象的属性
   // 指定 `this` 到函数并传入给定参数执行函数
   content.fn = this;
@@ -11,20 +11,20 @@ Function.prototype.myCall = function (content = window) {
   delete content.fn;
   // 返回结果
   return result;
-}
+};
 
 const foo = {
-value: 1
-}
+  value: 1
+};
 function bar(name, age) {
-  console.log(name) 
-  console.log(age) 
-  console.log(this.value)
+  console.log(name);
+  console.log(age);
+  console.log(this.value);
 }
-bar.myCall(foo, 'black', '18')
+bar.myCall(foo, "black", "18");
 
 // apply
-Function.prototype.myApply = function (content = window) {
+Function.prototype.myApply = function(content = window) {
   // 将函数设为对象的属性
   // 指定 `this` 到函数并传入给定参数执行函数
   content.fn = this;
@@ -34,14 +34,14 @@ Function.prototype.myApply = function (content = window) {
   delete content.fn;
   // 返回结果
   return result;
-}
+};
 
 const foo1 = {
-value: 2
-}
+  value: 2
+};
 function bar1(name, age) {
-  console.log(name) 
-  console.log(age) 
-  console.log(this.value)
+  console.log(name);
+  console.log(age);
+  console.log(this.value);
 }
-bar1.myApply(foo1, ['white', '16'])
+bar1.myApply(foo1, ["white", "16"]);

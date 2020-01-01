@@ -6,19 +6,20 @@
  **/
 
 function quickSort(arr) {
-    if (arr.length <= 1) return arr;
-    // 获取基准点
-    var pivotIndex = Math.floor(arr.length / 2);
-    var pivotVal = arr.splice(pivotIndex, 1)[0];
-    // 将小于基准点值放入left，大于基准点值放入right
-    var left = [], right = [];
-    for (var i = 0; i < arr.length; i++) {
-        if (arr[i] < pivotVal) left.push(arr[i])
-        else right.push(arr[i])
-    }
-    // 循环上述操作至剩下一个元素位为止
-    return quickSort(left).concat([pivotVal], quickSort(right))
+  if (arr.length <= 1) return arr;
+  // 获取基准点
+  var pivotIndex = Math.floor(arr.length / 2);
+  var pivotVal = arr.splice(pivotIndex, 1)[0];
+  // 将小于基准点值放入left，大于基准点值放入right
+  var left = [],
+    right = [];
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i] < pivotVal) left.push(arr[i]);
+    else right.push(arr[i]);
+  }
+  // 循环上述操作至剩下一个元素位为止
+  return quickSort(left).concat([pivotVal], quickSort(right));
 }
 
 var arr = [1, 4, 5, 32, 8, 27, 123, 44, 98, 15];
-console.log(quickSort(arr))
+console.log(quickSort(arr));
