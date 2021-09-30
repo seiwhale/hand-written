@@ -22,15 +22,28 @@
  */
 
 // 递归实现
-function fibonacci_1(n, first = 1, second = 1) {
-  if (n <= 1) {
-    return first;
+function createFibonacci1(first = 1, second = 1) {
+  const occ = new Map()
+  return function inner(n) {
+
+    // 添加函数记忆，避免重复计算
+    if (occ.has(n)) return occ.get(n)
+
+    if (n <= 1) {
+      return first;
+    }
+    if (n === 2) {
+      return second;
+    }
+
+    const result = inner(n - 1) + inner(n - 2)
+    occ.set(n, result)
+
+    return ;
   }
-  if (n === 2) {
-    return second;
-  }
-  return fibonacci_1(n - 1) + fibonacci_1(n - 2);
 }
+
+const fibonacci_1 = createFibonacci1()
 
 console.log(fibonacci_1(3));
 console.log(fibonacci_1(10));
