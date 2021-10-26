@@ -4,5 +4,5 @@
 
 🚀 我也会不定时进行更新这边的题目，欢迎各位 ❤️`star` 
 
-针对上面例子的具体讲解可参考[这里](https://seiwhale.github.io/2019/10/31/%E9%9D%A2%E8%AF%95/handwritten)。祝各位好运 🎉
+针对上面例子的具体讲解可参考[这里](https://seiwhale.github.io/posts/job/handwritten.html)。祝各位好运 🎉
 
