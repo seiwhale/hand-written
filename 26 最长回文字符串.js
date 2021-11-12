@@ -74,7 +74,41 @@ var expandAroundCenter = function (s, left, right) {
   return right - left - 1
 }
 
+// 方法三: 动态规划
+var dynamicProgramming = function (s) {
+  let len = s.length
+  if (len < 2) return s
+
+  let maxLen = 1,
+    begin = 0
+  let dp = new Array(len)
+  for (let i = 0; i < len; i++) {
+    dp[i] = new Array(len)
+    dp[i][i] = true
+  }
+
+  for (let j = 1; j < len; j++) {
+    for (let i = 0; i < j; i++) {
+      if (s[i] != s[j]) {
+        dp[i][j] = false
+      } else if (j - i < 3) {
+        dp[i][j] = true
+      } else {
+        dp[i][j] = dp[i + 1][j - 1]
+      }
+
+      if (dp[i][j] && j - i + 1 > maxLen) {
+        maxLen = j - i + 1
+        begin = i
+      }
+    }
+  }
+
+  return s.substring(begin, begin + maxLen)
+}
+
 /**********************************************/
 var str = "ababdbasdjkasdjkasadasda"
 console.log(longestPalindrome(str))
 console.log(centralDiffusion(str))
+console.log(dynamicProgramming(str))
